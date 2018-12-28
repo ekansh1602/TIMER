@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TIMER" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eVa-La-g1b">
+                                <rect key="frame" x="0.0" y="37" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="TIMER" id="1Ay-cn-ogL">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="pause" id="0qd-Yq-N4n">
+                                            <connections>
+                                                <action selector="pause:" destination="BYZ-38-t0r" id="did-KJ-PpC"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="play" id="A4h-hM-pu0">
+                                            <connections>
+                                                <action selector="play:" destination="BYZ-38-t0r" id="Et9-VK-VCt"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vv9-SR-Qbs">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem title="+10" id="UUV-rS-jc8">
+                                        <connections>
+                                            <action selector="add10:" destination="BYZ-38-t0r" id="7i8-0F-t8t"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="h6G-vn-E3i"/>
+                                    <barButtonItem title="RESET" id="dAW-Tm-whn">
+                                        <connections>
+                                            <action selector="reset:" destination="BYZ-38-t0r" id="owf-ss-6qf"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="tzV-IV-W3Z"/>
+                                    <barButtonItem title="-10" id="SUh-gt-fDu">
+                                        <connections>
+                                            <action selector="subtractten:" destination="BYZ-38-t0r" id="lsw-rc-5nT"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="210" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="siw-AT-Z0u">
+                                <rect key="frame" x="104" y="251" width="167" height="105"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jhn-GM-uC2">
+                                <rect key="frame" x="141" y="408" width="92" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="STOPWATCH"/>
+                                <connections>
+                                    <action selector="stopwatch:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PJd-Qh-B8l"/>
+                                    <segue destination="azy-UT-6Aj" kind="show" identifier="cell" id="ama-hK-i3N"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="time" destination="siw-AT-Z0u" id="iyl-oM-BBM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="53.600000000000001" y="26.53673163418291"/>
+        </scene>
+        <!--Second View Controller-->
+        <scene sceneID="D5b-fg-m1M">
+            <objects>
+                <viewController id="azy-UT-6Aj" customClass="SecondViewController" customModule="TIMER" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="u26-on-XLR">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A6y-2W-rxh">
+                                <rect key="frame" x="0.0" y="34" width="351" height="43.5"/>
+                                <items>
+                                    <navigationItem title="STOPWATCH" id="UcA-aL-Z0e">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="pause" id="ddT-gb-2T7">
+                                            <connections>
+                                                <action selector="pause:" destination="azy-UT-6Aj" id="qDB-M9-snf"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="play" id="Xec-DJ-2Jj">
+                                            <connections>
+                                                <action selector="play:" destination="azy-UT-6Aj" id="TOy-Qp-8Yp"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sbs-Gh-bbp">
+                                <rect key="frame" x="0.0" y="623" width="351" height="44"/>
+                                <items>
+                                    <barButtonItem title="+10" id="mjx-Jx-vx9">
+                                        <connections>
+                                            <action selector="addten:" destination="azy-UT-6Aj" id="5hl-Sf-YWU"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="IPF-MV-4W2"/>
+                                    <barButtonItem title="RESET" id="i4t-OY-Bcc">
+                                        <connections>
+                                            <action selector="reset:" destination="azy-UT-6Aj" id="Xb8-j0-1WT"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="YSY-mY-Phl"/>
+                                    <barButtonItem title="-10" id="pjb-15-3xE">
+                                        <connections>
+                                            <action selector="subtractten:" destination="azy-UT-6Aj" id="vAm-u7-vYx"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4b8-0c-KSO">
+                                <rect key="frame" x="153" y="318.5" width="45" height="30"/>
+                                <state key="normal" title="TIMER"/>
+                                <connections>
+                                    <action selector="timerview:" destination="azy-UT-6Aj" eventType="touchUpInside" id="vNy-zW-MFD"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="cell2" id="6Lv-pW-J4G"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h46-fS-VkA">
+                                <rect key="frame" x="65" y="278.5" width="221" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="Eqn-yt-QwQ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="A6y-2W-rxh" firstAttribute="leading" secondItem="u26-on-XLR" secondAttribute="leading" id="2Q4-K7-1qr"/>
+                            <constraint firstItem="4b8-0c-KSO" firstAttribute="centerX" secondItem="A6y-2W-rxh" secondAttribute="centerX" id="63H-lb-PU5"/>
+                            <constraint firstItem="Sbs-Gh-bbp" firstAttribute="bottom" secondItem="Pd5-RX-WTu" secondAttribute="bottom" id="8NH-Ns-pqT"/>
+                            <constraint firstItem="4b8-0c-KSO" firstAttribute="top" secondItem="h46-fS-VkA" secondAttribute="bottom" constant="19" id="Ddo-Lu-1iA"/>
+                            <constraint firstItem="h46-fS-VkA" firstAttribute="leading" secondItem="Pd5-RX-WTu" secondAttribute="leading" constant="65" id="FEX-Dc-GV2"/>
+                            <constraint firstItem="A6y-2W-rxh" firstAttribute="trailing" secondItem="Sbs-Gh-bbp" secondAttribute="trailing" id="Rf0-jX-hTW"/>
+                            <constraint firstItem="4b8-0c-KSO" firstAttribute="leading" secondItem="Pd5-RX-WTu" secondAttribute="leading" constant="153" id="cMX-mm-D6u"/>
+                            <constraint firstItem="A6y-2W-rxh" firstAttribute="centerX" secondItem="h46-fS-VkA" secondAttribute="centerX" id="eD2-6F-e84"/>
+                            <constraint firstItem="A6y-2W-rxh" firstAttribute="top" secondItem="Pd5-RX-WTu" secondAttribute="top" constant="14" id="gLb-mB-Kra"/>
+                            <constraint firstItem="4b8-0c-KSO" firstAttribute="centerY" secondItem="u26-on-XLR" secondAttribute="centerY" id="kvb-gH-dM4"/>
+                            <constraint firstItem="A6y-2W-rxh" firstAttribute="leading" secondItem="Sbs-Gh-bbp" secondAttribute="leading" id="u6g-Na-efi"/>
+                            <constraint firstItem="h46-fS-VkA" firstAttribute="top" secondItem="A6y-2W-rxh" secondAttribute="bottom" constant="201" id="uEr-To-t6t"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Pd5-RX-WTu"/>
+                    </view>
+                    <connections>
+                        <outlet property="time" destination="h46-fS-VkA" id="xab-wN-Ybs"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0Oo-sJ-CdF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="922" y="27"/>
+        </scene>
+    </scenes>
+</document>
